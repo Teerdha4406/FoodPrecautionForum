@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        /* CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+        }
+        h2 {
+            text-align: center;
+        }
+        #menu-categories {
+            max-width: 600px;
+            margin: auto;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .menu-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+        }
+        .menu-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Menu</h2>
+
+<div id="menu-categories">
+    <!-- Categories will be dynamically populated based on the selected health issue -->
+</div>
+
+<div class="button-container">
+    <button class="menu-button" onclick="navigateTo('ignore.html')">Food to Ignore</button>
+</div>
+<div class="button-container">
+    <button class="menu-button" onclick="navigateTo('take.html')">Food to Take</button>
+</div>
+<div class="button-container">
+    <button class="menu-button" onclick="navigateTo('medication.html')">Medication</button>
+</div>
+<div class="button-container">
+    <button class="menu-button" onclick="navigateTo('cautions.html')">Cautions</button>
+</div>
+<div class="button-container">
+    <button class="menu-button" onclick="navigateTo('timing.html')">Food Consumption Timing</button>
+</div>
+<div class="button-container">
+    <button class="menu-button" onclick="navigateTo('effects.html')">Effects</button>
+</div>
+
+<script>
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+</script>
+
+</body>
+</html>

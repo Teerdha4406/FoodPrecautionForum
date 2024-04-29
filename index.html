@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Precautions Form</title>
+    <style>
+        /* CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .container {
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Food Precautions Form</h2>
+    <form action="#" method="post" id="food-precautions-form">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" required>
+        </div>
+        <div>
+            <label for="place">Place</label>
+            <input type="text" id="place" name="place" required>
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="health-issue">Health Issue</label>
+            <select id="health-issue" name="health-issue" required>
+                <option value="">Select</option>
+                <option value="fever">Fever</option>
+                <option value="corona">Corona</option>
+                <option value="typhoid">Typhoid</option>
+                <option value="eye-problem">Eye Problem</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" id="submit-button">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("submit-button").addEventListener("click", function(event) {
+        var isValid = true;
+        var errorMessage = "";
+
+        var age = document.getElementById("age").value;
+        if (isNaN(age) || age <= 0) {
+            errorMessage += "Age must be a valid number greater than 0.\n";
+            isValid = false;
+        }
+
+        var gender = document.getElementById("gender").value;
+        if (gender === "") {
+            errorMessage += "Please select a gender.\n";
+            isValid = false;
+        }
+
+        var healthIssue = document.getElementById("health-issue").value;
+        if (healthIssue === "") {
+            errorMessage += "Please select a health issue.\n";
+            isValid = false;
+        }
+
+        if (!isValid) {
+            alert(errorMessage);
+        } else {
+            console.log("Redirecting to menu.html...");
+            window.location.href = "menu.html?health_issue=" + healthIssue;
+        }
+    });
+</script>
+
+</body>
+</html>
